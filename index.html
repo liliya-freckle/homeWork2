@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const grades = [];
+        for (let i = 0; i < 12; i++) {
+            grades.push(Math.floor(Math.random() * 100));
+        }
+        console.log(`1)` + grades);
+
+        const averageGrade = grades.reduce((acc, grade) => {
+            return (acc + grade) / grades.length
+        }, 0);
+        console.log(`2)` + averageGrade);
+
+        const maxGrade = Math.max(...grades);
+        console.log(`3)` + maxGrade)
+
+        const minGrade = Math.min(...grades);
+        console.log(`4)` + minGrade)
+
+        const goodGrade = grades.filter((grade) => {
+            if (grade >= 60) {
+                return grade;
+            }
+        });
+        console.log(`5)` + goodGrade);
+        console.log(`5)` + goodGrade.length)
+        console.log(`5)` + (grades.length - goodGrade.length))
+
+        const badGrade = grades.filter((grade) => {
+            if (grade <= 60) {
+                return grade;
+            }
+        })
+        console.log(`6)` + badGrade);
+        console.log(`6)` + badGrade.length);
+
+        grades.forEach(function (grade) {
+            if (grade >= 80) {
+                console.log(`A`);
+            } else if (grade < 80 && grade >= 60) {
+                console.log(`B`);
+            }
+            else if (grade >= 40 && grade < 59) {
+                console.log(`C`);
+            }
+            else if (grade >= 20 && grade < 39) {
+                console.log(`D`);
+            } else {
+                console.log(`E`);
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>
